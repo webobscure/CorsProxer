@@ -78,7 +78,7 @@ app.get("/cargo", async (req, res) => {
   }
 });
 
-app.get("/cargo-us", async (req, res) => {
+app.get("/cargo/usa", async (req, res) => {
   try {
     const model = (req.query.model || "").trim();
 
