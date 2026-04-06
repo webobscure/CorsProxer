@@ -1,0 +1,29 @@
+{
+  "name": "corsproxy",
+  "version": "1.0.0",
+  "description": "Proxy for api cargo data",
+  "keywords": [
+    "express"
+  ],
+  "homepage": "https://github.com/webobscure/CorsProxy#readme",
+  "bugs": {
+    "url": "https://github.com/webobscure/CorsProxy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webobscure/CorsProxy.git"
+  },
+  "license": "ISC",
+  "author": "Alex G.",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {}
+}
