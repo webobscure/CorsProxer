@@ -78,19 +78,12 @@ app.get("/cargo", async (req, res) => {
   }
 });
 
-app.get("/cargo/usa", async (req, res) => {
+app.get("/widget", async (req, res) => {
   try {
     const model = (req.query.model || "").trim();
 
     if (!model) {
       return res.status(400).json({ error: "model is required" });
-    }
-
-    const cacheKey = model.toUpperCase();
-    const cached = cache.get(cacheKey);
-
-    if (cached && cached.expiresAt > Date.now()) {
-      return res.json(cached.data);
     }
 
     const response = await fetch(
@@ -116,11 +109,6 @@ app.get("/cargo/usa", async (req, res) => {
         error: "Upstream did not return valid JSON",
       });
     }
-
-    cache.set(cacheKey, {
-      data,
-      expiresAt: Date.now() + TTL,
-    });
 
     return res.json(data);
   } catch (error) {
